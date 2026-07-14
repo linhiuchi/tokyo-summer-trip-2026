@@ -1,0 +1,91 @@
+:root {
+  --ink: #1f3141;
+  --muted: #607080;
+  --line: #d9e3e5;
+  --page: #eef7f6;
+  --card: #fffdf8;
+  --accent: #bd4a3c;
+  --indigo: #315b73;
+  --soft: #fff2df;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background-color: var(--page); background-image: radial-gradient(circle at 0 100%, rgba(109, 187, 185, .16) 0 2px, transparent 2.5px), radial-gradient(circle at 18px 100%, rgba(109, 187, 185, .13) 0 2px, transparent 2.5px); background-size: 36px 24px; color: var(--ink); font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+a { color: inherit; text-decoration: none; }
+main { max-width: 1080px; margin: 0 auto; background: var(--card); min-height: 100vh; box-shadow: 0 0 45px rgba(36, 80, 97, .10); }
+
+.hero { position: relative; padding: 24px 52px 58px; border-bottom: 1px solid var(--line); overflow: hidden; background: linear-gradient(135deg, #e2f3f0 0%, #f7f7e9 62%, #fff1dd 100%); }
+.hero::after { content: ""; position: absolute; right: -52px; top: 26px; width: 250px; height: 250px; border: 20px solid rgba(49, 91, 115, .08); border-radius: 50%; box-shadow: 0 0 0 20px rgba(49, 91, 115, .05), 0 0 0 40px rgba(49, 91, 115, .03); pointer-events: none; }
+nav { display: flex; align-items: center; justify-content: space-between; font-size: 14px; }
+nav div { display: flex; gap: 22px; color: var(--muted); }
+.brand { color: var(--indigo); font-weight: 800; letter-spacing: .08em; }
+.brand span { color: var(--accent); }
+.hero-copy { max-width: 720px; margin-top: 86px; }
+.eyebrow { margin: 0 0 12px; color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.hero h1, .plan h2, .notes h2 { margin: 0; font-family: "Noto Serif TC", Georgia, serif; font-size: clamp(42px, 6vw, 72px); font-weight: 600; line-height: 1.18; letter-spacing: -.04em; }
+em { color: var(--accent); font-style: normal; }
+.lede { max-width: 520px; margin: 22px 0; color: var(--muted); font-size: 17px; line-height: 1.7; }
+.dates { display: inline-flex; gap: 12px; align-items: center; padding: 10px 14px; background: rgba(255, 253, 248, .72); border: 1px solid rgba(49, 91, 115, .13); border-radius: 6px; font-size: 14px; }
+.dates strong { color: var(--accent); }
+.sun, .skyline, .vertical { display: none; }
+.scroll { display: inline-block; margin-top: 38px; color: var(--accent); font-weight: 700; font-size: 14px; }
+.scroll span { margin-left: 6px; }
+
+.intro { padding: 64px 52px; background: linear-gradient(90deg, #fffdf8, #f8fcfa); border-bottom: 1px solid var(--line); }
+.large { max-width: 780px; margin: 0; font: 600 clamp(25px, 3.5vw, 40px)/1.55 "Noto Serif TC", Georgia, serif; }
+
+.plan { padding: 64px 52px; }
+.plan header { margin-bottom: 32px; }
+.plan h2 { font-size: clamp(36px, 5vw, 54px); }
+.plan header > p:last-child { color: var(--muted); font-size: 14px; }
+.quick-note { display: flex; gap: 10px; max-width: 720px; margin-top: 18px; padding: 12px 14px; background: var(--soft); border-left: 3px solid var(--accent); color: var(--muted); font-size: 13px; line-height: 1.6; }
+.quick-note b { flex: 0 0 auto; color: var(--accent); }
+.days { border-top: 1px solid var(--line); }
+.day { border-bottom: 1px solid var(--line); }
+.day button { display: grid; grid-template-columns: 52px 1fr 24px; gap: 14px; width: 100%; padding: 22px 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; }
+.number { color: var(--accent); font-weight: 700; }
+.day small { display: block; margin-bottom: 5px; color: var(--muted); font-size: 12px; }
+.day b { font-size: 19px; font-weight: 700; }
+.day i { color: var(--accent); font-size: 21px; font-style: normal; transition: transform .2s; }
+.active i { transform: rotate(45deg); }
+.details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-height: 0; overflow: hidden; opacity: 0; padding: 0 0 0 66px; transition: max-height .25s ease, opacity .2s ease, padding .25s ease; }
+.active .details { max-height: 380px; opacity: 1; padding: 0 0 24px 66px; }
+.details span { color: var(--accent); font-size: 12px; font-weight: 700; }
+.details p { margin: 6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.tour-link { display: block; width: fit-content; margin-top: 10px; color: var(--accent); font-weight: 700; }
+
+.alternatives { padding: 64px 52px; border-top: 1px solid var(--line); }
+.alternatives h2 { margin: 0; font-family: "Noto Serif TC", Georgia, serif; font-size: clamp(32px, 4vw, 48px); font-weight: 600; letter-spacing: -.04em; }
+.alternative-intro { max-width: 650px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.alternative-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 26px; }
+.alternative-grid article { padding: 20px; border: 1px solid var(--line); border-radius: 6px; }
+.alternative-grid span { color: var(--accent); font-size: 12px; font-weight: 700; }
+.alternative-grid h3 { margin: 8px 0; font-size: 22px; }
+.alternative-grid p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+
+.notes { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; padding: 64px 52px; background: linear-gradient(135deg, #f7fbf8, #fff9ef); border-top: 1px solid var(--line); }
+.notes h2 { font-size: clamp(36px, 4vw, 52px); }
+.note-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.note-grid article { padding: 18px; background: var(--card); border: 1px solid var(--line); border-radius: 6px; }
+.note-grid span { color: var(--accent); font-size: 12px; font-weight: 700; }
+.note-grid h3 { margin: 10px 0 6px; font-size: 17px; }
+.note-grid p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+footer { display: flex; justify-content: space-between; gap: 16px; padding: 24px 52px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); }
+footer a { color: var(--accent); font-weight: 700; }
+
+@media (max-width: 680px) {
+  body { background-image: none; }
+  .hero, .intro, .plan, .notes, .alternatives { padding-left: 24px; padding-right: 24px; }
+  .hero-copy { margin-top: 62px; }
+  .hero::after { right: -100px; top: 64px; width: 180px; height: 180px; }
+  .intro, .plan, .notes { padding-top: 48px; padding-bottom: 48px; }
+  .notes { grid-template-columns: 1fr; gap: 34px; }
+  .details, .active .details { grid-template-columns: 1fr; gap: 18px; max-height: 0; padding-left: 0; }
+  .active .details { max-height: 600px; }
+  .active .details { padding-bottom: 22px; }
+  .note-grid { grid-template-columns: 1fr; }
+  .alternative-grid { grid-template-columns: 1fr; }
+  footer { flex-wrap: wrap; padding: 22px 24px; }
+}
+ 
